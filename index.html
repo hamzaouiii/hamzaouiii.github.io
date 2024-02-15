@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simo Hamzaoui</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        all:unset;
+        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        font-size: calc(10px + 0.33vw);
+        -webkit-font-smoothing: antialiased;
+        color: #121314;
+        background-color: #f5f5f59f;
+        overflow: hidden;
+      }
+      nav {
+        position: fixed;
+        padding: 30px ;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      nav > span {
+        all: unset;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0, 0.8, 0.13, 1);
+      }
+      nav > span:hover {
+        color: rgba(78, 78, 78, 0.424);
+      }
+      .container > div {
+        padding: 50px;
+      }
+
+      h1 {
+        font-size: 4.5em;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 1.6em;
+        font-weight: 300;
+        line-height: 1.4;
+        max-width: 28em;
+      }
+      .container > div> p> a {
+        text-decoration: none;
+        white-space: nowrap;
+        color: #121314;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0, 0.8, 0.13, 1);
+      }
+      .container > div> p> a:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 88%;
+        top: -0.1em;
+        right: -0.1em;
+        bottom: 0;
+        transition: left 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        background-color: rgba(0, 191, 255,0.5);
+      }
+      .container > div> p> a:hover:after {
+        left: 0%;
+      }
+      .container > div> p> a:hover{
+        color: whitesmoke;
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav>
+      <span href="#en">EN</span> |
+      <span href="#de">DE</span>
+    </nav>
+    <div class="container">
+        <div class="english" id="en" style="display: none;">
+            <h1>Hello.</h1>
+            <p style="font-weight: 500; font-size: 2.2em">My name is Simo Hamzaoui.</p>
+            <p>
+                I am a software developer currently based near Hamburg, Germany. 
+            </p>
+            <p>I am certified 
+                <a href="https://www.sugarcrm.com/" target="_blank">SugarCRM</a> 
+                developer and I have been working with it for over 6 years.
+                I have a masters degree in computer science and I have been working in the software development industry for over 10 years.
+            </p>
+            <p>
+                Due to my experience, I have been involved in many projects and I have been able to work with many different technologies. I have built countless web applications, APIs, and integrations, mostly around SugarCRM.
+            </p>
+            <p>
+              I am not on social media, but you can reach me via email at <a href="https://www.sugarcrm.com/" target="_blank">simo@hamzaoui.cc</a> 
+            </p>
+            <p>
+              Otherwise, When I am not busy with my two daughters, I am probably working on my next project, or enjoying a good book.
+            </p>
+        </div>
+        <div class="deutsch" id ="de" style="display: none;">
+          <h1>Moin.</h1>
+          <p style="font-weight: 500; font-size: 2.2em">Ich bin Simo Hamzaoui.</p>
+          <p>
+            Ich bin ein Softwareentwickler und lebe derzeit in der Nähe von Hamburg. 
+          </p>
+          <p>              
+              Ich bin zertifizierter <a href="https://www.sugarcrm.com/" target="_blank">SugarCRM</a>-Entwickler und arbeite seit über 6 Jahren damit. Ich habe einen Masterabschluss in Informatik und arbeite seit über 10 Jahren in der Softwareentwicklungsbranche.
+          </p>
+          <p>
+            Aufgrund meiner Erfahrung war ich in viele Projekte eingebunden und konnte mit vielen verschiedenen Technologien arbeiten. Ich habe unzählige Webanwendungen, APIs und Integrationen erstellt, hauptsächlich rund um SugarCRM.
+
+          </p>
+          <p>
+            Ich bin nicht in den sozialen Medien aktiv, aber Sie können mich per E-Mail unter <a href="https://www.sugarcrm.com/" target="_blank">simo@hamzaoui.cc</a> erreichen
+          </p>
+          <p>
+            Ansonsten arbeite ich wahrscheinlich an meinem nächsten Projekt oder genieße ein gutes Buch, wenn ich nicht gerade mit meinen beiden Töchtern beschäftigt bin.
+
+          </p>
+        </div>
+    </div>
+    <script>
+      const elements = document.querySelectorAll('span');
+      const lang = window.location.hash.substr(1);
+      document.addEventListener('DOMContentLoaded', () => {
+        if (lang === 'de') {
+          document.querySelector('.deutsch').style.display = 'block';
+        } else {
+          document.querySelector('.english').style.display = 'block';
+        }
+      });
+      elements.forEach(element => {
+        element.addEventListener('click', (e) => {
+        console.log(e.target);
+        if (e.target.innerText === 'EN') {
+          document.querySelector('.deutsch').style.display = 'none';
+          document.querySelector('.english').style.display = 'block';
+        } else if (e.target.innerText === 'DE'){
+          document.querySelector('.english').style.display = 'none';
+          document.querySelector('.deutsch').style.display = 'block';
+        }
+      });
+     
+      });
+    </script>
+  </body>
+</html>
