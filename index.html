@@ -15,14 +15,18 @@
         font-size: calc(10px + 0.33vw);
         -webkit-font-smoothing: antialiased;
         color: #121314;
-        background-color: #f5f5f59f;
-        overflow: hidden;
+        background-color: #f5f5f5;
+        ;
       }
       nav {
         position: fixed;
+        width: 100%;
+        text-align: center ;
         padding: 30px ;
         left: 50%;
         transform: translateX(-50%);
+        background-color: #f5f5f5;
+
       }
       nav > span {
         all: unset;
@@ -35,7 +39,9 @@
       .container > div {
         padding: 50px;
       }
-
+      .active {
+        color: rgba(78, 78, 78, 0.424);
+      }
       h1 {
         font-size: 4.5em;
         font-weight: 500;
@@ -95,7 +101,7 @@
                 Due to my experience, I have been involved in many projects and I have been able to work with many different technologies. I have built countless web applications, APIs, and integrations, mostly around SugarCRM.
             </p>
             <p>
-              I am not on social media, but you can reach me via email at <a href="https://www.sugarcrm.com/" target="_blank">simo@hamzaoui.cc</a> 
+              I am not on social media, but you can reach me via email at <a href="mailto:simo@hamzaoui.cc" target="_blank">simo@hamzaoui.cc</a> 
             </p>
             <p>
               Otherwise, When I am not busy with my two daughters, I am probably working on my next project, or enjoying a good book.
@@ -112,10 +118,9 @@
           </p>
           <p>
             Aufgrund meiner Erfahrung war ich in viele Projekte eingebunden und konnte mit vielen verschiedenen Technologien arbeiten. Ich habe unzählige Webanwendungen, APIs und Integrationen erstellt, hauptsächlich rund um SugarCRM.
-
           </p>
           <p>
-            Ich bin nicht in den sozialen Medien aktiv, aber Sie können mich per E-Mail unter <a href="https://www.sugarcrm.com/" target="_blank">simo@hamzaoui.cc</a> erreichen
+            Ich bin nicht in den sozialen Medien aktiv, aber du kannst mich per E-Mail unter <a href="mailto:simo@hamzaoui.cc" target="_blank">simo@hamzaoui.cc</a> erreichen
           </p>
           <p>
             Ansonsten arbeite ich wahrscheinlich an meinem nächsten Projekt oder genieße ein gutes Buch, wenn ich nicht gerade mit meinen beiden Töchtern beschäftigt bin.
@@ -135,7 +140,6 @@
       });
       elements.forEach(element => {
         element.addEventListener('click', (e) => {
-        console.log(e.target);
         if (e.target.innerText === 'EN') {
           document.querySelector('.deutsch').style.display = 'none';
           document.querySelector('.english').style.display = 'block';
